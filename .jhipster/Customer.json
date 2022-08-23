@@ -1,0 +1,55 @@
+{
+  "applications": "*",
+  "changelogDate": "20220823142846",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "customer",
+  "fields": [
+    {
+      "fieldName": "slug",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Customer",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "tweets",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "tweets",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "relationshipName": "user",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "customer",
+      "otherEntityRelationshipName": "followed",
+      "ownerSide": true,
+      "relationshipName": "follower",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "customer",
+      "otherEntityRelationshipName": "follower",
+      "ownerSide": false,
+      "relationshipName": "followed",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}
